@@ -1,22 +1,23 @@
 <?php
 class Person {
-    protected $name;
-    protected $age;
+    protected string $name;
+    protected int  $age;
 
     public function __construct($name, $age) {
         $this->name = $name;
         $this->age = $age;
     }
 
-    public function getInfo() {
+    public function getInfo(): string
+    {
         return "Name: {$this->name}, Age: {$this->age}";
     }
 }
 
 class Employee extends Person {
-    private $employeeId;
-    private $position;
-    private $studentId;
+    private string $employeeId;
+    private  string $position;
+    private string $studentId;
 
     public function __construct($name, $age, $employeeId, $position, $studentId) {
         parent::__construct($name, $age);
@@ -25,7 +26,8 @@ class Employee extends Person {
         $this->studentId = $studentId;
     }
 
-    public function getEmployeeInfo() {
+    public function getEmployeeInfo(): string
+    {
         return "Employee ID: {$this->employeeId}, Position: {$this->position}, Student ID: {$this->studentId}";
     }
 }
